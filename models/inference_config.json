@@ -1,0 +1,53 @@
+{
+  "candidate_radius_m": 50.0,
+  "features": [
+    "dist",
+    "dist_rank",
+    "dist_minus_min",
+    "dist_ratio",
+    "heading_diff",
+    "heading_cos",
+    "heading_valid",
+    "speed",
+    "arc_len",
+    "t_frac",
+    "endpoint_dist",
+    "n_cands",
+    "ctx_dist_mean",
+    "ctx_dist_max",
+    "along_move",
+    "along_move_norm",
+    "deg_out_to",
+    "deg_in_from",
+    "has_reverse",
+    "time_gap"
+  ],
+  "hmm": {
+    "beta": 5.0,
+    "w_emit": 0.5,
+    "gap_break_s": 60.0,
+    "limit_extra_m": 300.0,
+    "min_prob": 0.0001
+  },
+  "model": "HistGradientBoosting (BO-tuned)",
+  "best_params": {
+    "learning_rate": 0.031931885666490266,
+    "max_iter": 548,
+    "max_leaf_nodes": 63,
+    "min_samples_leaf": 10,
+    "l2_regularization": 0.37324424617937524,
+    "max_features": 0.5760657440650583
+  },
+  "decoder_tuning_trips": [
+    "00000008",
+    "00000010",
+    "00000020",
+    "00000039",
+    "00000058",
+    "00000068",
+    "00000069",
+    "00000082",
+    "00000093",
+    "00000096"
+  ]
+}
