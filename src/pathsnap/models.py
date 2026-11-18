@@ -48,3 +48,16 @@ def make_hgb(params: dict):
         max_leaf_nodes=int(params["max_leaf_nodes"]), min_samples_leaf=int(params["min_samples_leaf"]),
         l2_regularization=params["l2_regularization"], max_features=params.get("max_features", 1.0),
         early_stopping=True, n_iter_no_change=15, validation_fraction=0.1, random_state=SEED)
+
+
+# LightGBM (optional dependency: pip install lightgbm). Added to the comparison only if installed.
+try:
+    from lightgbm import LGBMClassifier
+
+    MODEL_SPECS["LightGBM"] = (
+        "Boosting", "LightGBM 300 trees, lr=0.05, num_leaves=31, subsample=0.8, colsample_bytree=0.8",
+        lambda: LGBMClassifier(n_estimators=300, learning_rate=0.05, num_leaves=31, subsample=0.8, subsample_freq=1,
+                               colsample_bytree=0.8, random_state=SEED, n_jobs=-1, verbose=-1), None)
+except ImportError:
+    pass
+

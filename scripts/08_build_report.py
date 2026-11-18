@@ -36,13 +36,15 @@ icfg = json.load(open(os.path.join(MODEL_DIR, "inference_config.json")))
 
 # ---- training-set fit (for over/under-fitting evidence): 15 training trips, all saved models ----
 tf_path = R("train_fit_scores.csv")
-if not os.path.exists(tf_path):
+done = set(pd.read_csv(tf_path).model) if os.path.exists(tf_path) else set()
+todo = [m for m in cmp_.model if m not in done]
+if todo:
     tr = pd.read_pickle(os.path.join(FEAT_DIR, "train.pkl"))
     tr = tr[tr.label_valid]
     keep = sorted(tr.trip_id.unique())[::5][:16]
     tr = tr[tr.trip_id.isin(keep)]
     rows = []
-    for name in cmp_.model:
+    for name in todo:
         m = joblib.load(os.path.join(MODEL_DIR, f"{name}.joblib"))
         p = m.predict_proba(tr[FEATURES].values)[:, 1]
         d = tr[["trip_id", "obs", "arc", "y", "true_arc", "label_valid"]].copy()
@@ -50,7 +52,8 @@ if not os.path.exists(tf_path):
         r = row_metrics(tr.y.values, p)
         r.update(observation_metrics(top1_predictions(d)))
         rows.append(dict(model=name, train_macro_f1=r["macro_f1"], train_top1=r["top1_acc"], train_log_loss=r["log_loss"]))
-    pd.DataFrame(rows).to_csv(tf_path, index=False)
+    prev = pd.read_csv(tf_path) if os.path.exists(tf_path) else pd.DataFrame()
+    pd.concat([prev, pd.DataFrame(rows)]).to_csv(tf_path, index=False)
 tfit = pd.read_csv(tf_path)
 cmp_ = cmp_.merge(tfit, on="model")
 
@@ -221,6 +224,12 @@ TXT = {
                "stopping, small model. Limitations: more hyperparameters, can overfit without regularisation or early stopping.",
                "learning_rate=0.1, max_iter=200 (early stopping), max_leaf_nodes=31, min_samples_leaf=20, l2=0.",
                "Binary log loss minimised by gradient boosting (Newton steps per leaf)."),
+    "LightGBM": ("LightGBM is a histogram-based gradient-boosting library (the design HistGradientBoosting is modelled on) "
+                 "with leaf-wise tree growth plus row and column subsampling.",
+                 "Strengths: very fast, strong on tabular data, built-in subsampling regularisation. Limitations: leaf-wise "
+                 "growth can overfit small data if num_leaves is large; it is an extra dependency.",
+                 "n_estimators=300, learning_rate=0.05, num_leaves=31, subsample=0.8 (every iteration), colsample_bytree=0.8.",
+                 "Binary log loss minimised by gradient boosting (gradient + Hessian per leaf)."),
     "MLP": ("A neural network can learn smooth non-linear combinations of the geometric features.",
             "Strengths: flexible, smooth probabilities. Limitations: needs scaling and careful regularisation, is "
             "sensitive to initialisation, slower to train on CPU, and is usually not better than boosting on small tabular "
