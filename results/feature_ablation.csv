@@ -1,0 +1,9 @@
+removed,n_features,heldout_top1,delta_vs_all
+none (all 20 features),20,0.8276462901118048,0.0
+"distance (dist, rank, minus_min, ratio)",16,0.8157397996224771,-0.011906490489327681
+"heading (diff, cos, valid)",17,0.8251778713518223,-0.0024684187599824936
+along-arc motion,18,0.8121097720342675,-0.015536518077537309
+temporal context (ctx_dist_mean/max),18,0.8047045157543198,-0.022941774357485012
+"arc geometry (len, t_frac, endpoint)",17,0.8214026426600842,-0.006243647451720569
+"network (degrees, reverse, n_cands)",16,0.8222738492812546,-0.005372440830550218
+"kinematics (speed, time_gap)",18,0.8263394801800493,-0.0013068099317554704
