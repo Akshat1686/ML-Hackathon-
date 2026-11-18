@@ -73,7 +73,8 @@ for tid in ids:
         print("folium not installed - skipped HTML for", tid)
         continue
     center = [float(gps[:, 1].mean()), float(gps[:, 0].mean())]
-    m = folium.Map(location=center, zoom_start=14, tiles="OpenStreetMap")
+    # CartoDB tiles: OpenStreetMap blocks tile requests from local file:// pages (403 "Access blocked")
+    m = folium.Map(location=center, zoom_start=14, tiles="CartoDB positron")
     layers = [
         ("Road network (nearby arcs)", net, dict(color="#888888", weight=1, opacity=.6)),
         ("Reference route", trip.route, dict(color="#2ca02c", weight=8, opacity=.5)),
