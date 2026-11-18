@@ -1,0 +1,1041 @@
+{
+  "seed": 1729,
+  "features": [
+    "distance_m",
+    "heading_agreement",
+    "heading_known",
+    "position_on_arc",
+    "arc_length_m",
+    "gps_speed_m_s",
+    "start_distance_m",
+    "end_distance_m"
+  ],
+  "candidates": 8,
+  "gap_s": 35.0,
+  "bridge_limit_m": 160.0,
+  "max_transition_speed_m_s": 45.0,
+  "prep_s": 73.19230600004084,
+  "search_s": 188.62524860003032,
+  "trials": 12,
+  "best_trial": 3,
+  "selected": "HistGradientBoosting",
+  "models": [
+    {
+      "model": "Logistic Regression",
+      "family": "Linear",
+      "parameters": {
+        "C": 1.0,
+        "max_iter": 150
+      },
+      "cv_folds": [
+        0.8325753527076218,
+        0.8316180379315932,
+        0.8834158599899112
+      ],
+      "cv_macro_f1": 0.8492030835430421,
+      "cv_std": 0.02419524288019836,
+      "train_macro_f1": 0.8501084449476075,
+      "training_s": 2.3117792999837548,
+      "inference_s": 0.010123700019903481,
+      "candidate_accuracy": 0.9399432946587227,
+      "precision": 0.8624360938841501,
+      "recall": 0.861963043234711,
+      "macro_f1": 0.8621993430953769,
+      "log_loss": 0.1557760387659073,
+      "confusion": [
+        [
+          129427,
+          4582
+        ],
+        [
+          4611,
+          14452
+        ]
+      ],
+      "points": 19160,
+      "aligned": 19134,
+      "route_parts": 2043,
+      "top1": 0.8083516253789067,
+      "candidate_miss": 0.0037106721020173515,
+      "continuity": 0.8938847981617839,
+      "arc_multiset_f1": 0.5974769967550236,
+      "ordered_arc_pair_f1": 0.5532833685797891
+    },
+    {
+      "model": "Gaussian Naive Bayes",
+      "family": "Probabilistic",
+      "parameters": {
+        "var_smoothing": 1e-09
+      },
+      "cv_folds": [
+        0.7748753100083614,
+        0.7614417037134045,
+        0.7798494195159786
+      ],
+      "cv_macro_f1": 0.7720554777459148,
+      "cv_std": 0.007774942261664951,
+      "train_macro_f1": 0.776039356907013,
+      "training_s": 0.2708390000043437,
+      "inference_s": 0.018276299932040274,
+      "candidate_accuracy": 0.8691596111633741,
+      "precision": 0.7312833938614447,
+      "recall": 0.8632699385487919,
+      "macro_f1": 0.7702690182883706,
+      "log_loss": 0.3548647165298462,
+      "confusion": [
+        [
+          116737,
+          17272
+        ],
+        [
+          2756,
+          16307
+        ]
+      ],
+      "points": 19160,
+      "aligned": 19134,
+      "route_parts": 2266,
+      "top1": 0.7612626737744329,
+      "candidate_miss": 0.0037106721020173515,
+      "continuity": 0.8822392814246175,
+      "arc_multiset_f1": 0.5720601048041579,
+      "ordered_arc_pair_f1": 0.5171886348030961
+    },
+    {
+      "model": "Decision Tree",
+      "family": "Tree",
+      "parameters": {
+        "max_depth": 9,
+        "min_samples_leaf": 50
+      },
+      "cv_folds": [
+        0.8334867404259879,
+        0.8423102245519459,
+        0.8908325211999919
+      ],
+      "cv_macro_f1": 0.8555431620593086,
+      "cv_std": 0.02521200268986124,
+      "train_macro_f1": 0.8601389690790098,
+      "training_s": 15.812236799974926,
+      "inference_s": 0.014572900021448731,
+      "candidate_accuracy": 0.9467570816347862,
+      "precision": 0.8874662666812134,
+      "recall": 0.8611525478522599,
+      "macro_f1": 0.8736504632884405,
+      "log_loss": 0.13602058803833308,
+      "confusion": [
+        [
+          130679,
+          3330
+        ],
+        [
+          4820,
+          14243
+        ]
+      ],
+      "points": 19160,
+      "aligned": 19134,
+      "route_parts": 2005,
+      "top1": 0.8088219922650779,
+      "candidate_miss": 0.0037106721020173515,
+      "continuity": 0.8958692359914355,
+      "arc_multiset_f1": 0.6023105414929025,
+      "ordered_arc_pair_f1": 0.5702461336172122
+    },
+    {
+      "model": "Extra Trees",
+      "family": "Ensemble",
+      "parameters": {
+        "n_estimators": 24,
+        "max_depth": 12,
+        "min_samples_leaf": 25
+      },
+      "cv_folds": [
+        0.7693766012969012,
+        0.777420936333737,
+        0.7739740385338905
+      ],
+      "cv_macro_f1": 0.7735905253881762,
+      "cv_std": 0.0032952636005755907,
+      "train_macro_f1": 0.7705368163388877,
+      "training_s": 9.905990200000815,
+      "inference_s": 0.23974460002500564,
+      "candidate_accuracy": 0.9283931744538518,
+      "precision": 0.9127483186250365,
+      "recall": 0.7368259449551416,
+      "macro_f1": 0.7933261463067414,
+      "log_loss": 0.19590724937368562,
+      "confusion": [
+        [
+          132928,
+          1081
+        ],
+        [
+          9880,
+          9183
+        ]
+      ],
+      "points": 19160,
+      "aligned": 19134,
+      "route_parts": 2618,
+      "top1": 0.7975854499843211,
+      "candidate_miss": 0.0037106721020173515,
+      "continuity": 0.8638571204762651,
+      "arc_multiset_f1": 0.5869024719878521,
+      "ordered_arc_pair_f1": 0.5458283441849981
+    },
+    {
+      "model": "HistGradientBoosting",
+      "family": "Boosting",
+      "parameters": {
+        "learning_rate": 0.1,
+        "max_iter": 55,
+        "max_leaf_nodes": 23,
+        "min_samples_leaf": 35,
+        "l2_regularization": 0.1
+      },
+      "cv_folds": [
+        0.8434164666117407,
+        0.8445770061637117,
+        0.8946490089159463
+      ],
+      "cv_macro_f1": 0.8608808272304662,
+      "cv_std": 0.023882410316250425,
+      "train_macro_f1": 0.8653690803518896,
+      "training_s": 6.025653899996541,
+      "inference_s": 0.22529720002785325,
+      "candidate_accuracy": 0.9481289850527856,
+      "precision": 0.8877611200693013,
+      "recall": 0.8692028433120742,
+      "macro_f1": 0.8781566767540984,
+      "log_loss": 0.13095089282934227,
+      "confusion": [
+        [
+          130566,
+          3443
+        ],
+        [
+          4497,
+          14566
+        ]
+      ],
+      "points": 19160,
+      "aligned": 19134,
+      "route_parts": 1917,
+      "top1": 0.8172363332288074,
+      "candidate_miss": 0.0037106721020173515,
+      "continuity": 0.9004647762285237,
+      "arc_multiset_f1": 0.6092163179360156,
+      "ordered_arc_pair_f1": 0.5792729997069613
+    },
+    {
+      "model": "HistGradientBoosting (tuned)",
+      "family": "Boosting",
+      "parameters": {
+        "learning_rate": 0.09373632912870394,
+        "max_iter": 55,
+        "max_leaf_nodes": 36,
+        "min_samples_leaf": 22,
+        "l2_regularization": 0.7887793361316405
+      },
+      "cv_folds": [
+        0.8440924075644478,
+        0.845205060735322,
+        0.8953918333335664
+      ],
+      "cv_macro_f1": 0.8615631005444454,
+      "cv_std": 0.023924838848053263,
+      "train_macro_f1": 0.8675271135442939,
+      "training_s": 6.840823500067927,
+      "inference_s": 0.2654332999372855,
+      "candidate_accuracy": 0.9482400439009093,
+      "precision": 0.8884626549601293,
+      "recall": 0.8687488241543501,
+      "macro_f1": 0.8782390908110168,
+      "log_loss": 0.13046099733492925,
+      "confusion": [
+        [
+          130606,
+          3403
+        ],
+        [
+          4520,
+          14543
+        ]
+      ],
+      "points": 19160,
+      "aligned": 19134,
+      "route_parts": 1919,
+      "top1": 0.8172885962161597,
+      "candidate_miss": 0.0037106721020173515,
+      "continuity": 0.9003603321322262,
+      "arc_multiset_f1": 0.6077608257682597,
+      "ordered_arc_pair_f1": 0.57287925723773
+    }
+  ],
+  "nearest": {
+    "points": 19160,
+    "aligned": 19134,
+    "route_parts": 3336,
+    "top1": 0.5298944287655483,
+    "candidate_miss": 0.0037106721020173515,
+    "continuity": 0.8263616899054781,
+    "arc_multiset_f1": 0.40489619155859247,
+    "ordered_arc_pair_f1": 0.24554762479782216
+  },
+  "classifier": {
+    "points": 19160,
+    "aligned": 19134,
+    "route_parts": 1919,
+    "top1": 0.8172885962161597,
+    "candidate_miss": 0.0037106721020173515,
+    "continuity": 0.9003603321322262,
+    "arc_multiset_f1": 0.6077608257682597,
+    "ordered_arc_pair_f1": 0.57287925723773
+  },
+  "decoded": {
+    "points": 19160,
+    "aligned": 19134,
+    "route_parts": 28,
+    "top1": 0.9146545416536009,
+    "candidate_miss": 0.0037106721020173515,
+    "continuity": 0.9991122251814716,
+    "arc_multiset_f1": 0.9008549279019862,
+    "ordered_arc_pair_f1": 0.8875705188944915
+  },
+  "decoder_s": 2.124950300087221,
+  "student_per_trip": {
+    "Logistic Regression": [
+      {
+        "trip": "00000000",
+        "aligned": 2503,
+        "points": 2503,
+        "correct": 2328,
+        "missed": 5,
+        "linked": 2365,
+        "eligible_links": 2502,
+        "route_parts": 138,
+        "arc_multiset_f1": 0.6117216117216118,
+        "ordered_arc_pair_f1": 0.6633906633906634
+      },
+      {
+        "trip": "00000007",
+        "aligned": 1354,
+        "points": 1354,
+        "correct": 1247,
+        "missed": 0,
+        "linked": 1345,
+        "eligible_links": 1353,
+        "route_parts": 9,
+        "arc_multiset_f1": 0.6237113402061856,
+        "ordered_arc_pair_f1": 0.6296296296296297
+      },
+      {
+        "trip": "00000009",
+        "aligned": 1049,
+        "points": 1049,
+        "correct": 817,
+        "missed": 24,
+        "linked": 880,
+        "eligible_links": 1048,
+        "route_parts": 169,
+        "arc_multiset_f1": 0.7395498392282959,
+        "ordered_arc_pair_f1": 0.6395806028833552
+      },
+      {
+        "trip": "00000040",
+        "aligned": 2995,
+        "points": 2995,
+        "correct": 2629,
+        "missed": 1,
+        "linked": 2848,
+        "eligible_links": 2994,
+        "route_parts": 147,
+        "arc_multiset_f1": 0.5268915223336372,
+        "ordered_arc_pair_f1": 0.5036880927291886
+      },
+      {
+        "trip": "00000052",
+        "aligned": 262,
+        "points": 262,
+        "correct": 245,
+        "missed": 0,
+        "linked": 244,
+        "eligible_links": 261,
+        "route_parts": 18,
+        "arc_multiset_f1": 0.8202247191011236,
+        "ordered_arc_pair_f1": 0.7295597484276729
+      },
+      {
+        "trip": "00000056",
+        "aligned": 3932,
+        "points": 3958,
+        "correct": 3219,
+        "missed": 9,
+        "linked": 3377,
+        "eligible_links": 3957,
+        "route_parts": 581,
+        "arc_multiset_f1": 0.7309782608695652,
+        "ordered_arc_pair_f1": 0.6773920406435224
+      },
+      {
+        "trip": "00000065",
+        "aligned": 768,
+        "points": 768,
+        "correct": 602,
+        "missed": 2,
+        "linked": 651,
+        "eligible_links": 766,
+        "route_parts": 117,
+        "arc_multiset_f1": 0.543046357615894,
+        "ordered_arc_pair_f1": 0.4955223880597015
+      },
+      {
+        "trip": "00000076",
+        "aligned": 1486,
+        "points": 1486,
+        "correct": 1172,
+        "missed": 13,
+        "linked": 1236,
+        "eligible_links": 1485,
+        "route_parts": 250,
+        "arc_multiset_f1": 0.5912698412698413,
+        "ordered_arc_pair_f1": 0.46499339498018494
+      },
+      {
+        "trip": "00000077",
+        "aligned": 3911,
+        "points": 3911,
+        "correct": 2499,
+        "missed": 17,
+        "linked": 3435,
+        "eligible_links": 3910,
+        "route_parts": 476,
+        "arc_multiset_f1": 0.19991772932949403,
+        "ordered_arc_pair_f1": 0.16376663254861823
+      },
+      {
+        "trip": "00000091",
+        "aligned": 874,
+        "points": 874,
+        "correct": 709,
+        "missed": 0,
+        "linked": 736,
+        "eligible_links": 873,
+        "route_parts": 138,
+        "arc_multiset_f1": 0.5874587458745875,
+        "ordered_arc_pair_f1": 0.5653104925053534
+      }
+    ],
+    "Gaussian Naive Bayes": [
+      {
+        "trip": "00000000",
+        "aligned": 2503,
+        "points": 2503,
+        "correct": 1994,
+        "missed": 5,
+        "linked": 2341,
+        "eligible_links": 2502,
+        "route_parts": 162,
+        "arc_multiset_f1": 0.415,
+        "ordered_arc_pair_f1": 0.3956043956043956
+      },
+      {
+        "trip": "00000007",
+        "aligned": 1354,
+        "points": 1354,
+        "correct": 1198,
+        "missed": 0,
+        "linked": 1338,
+        "eligible_links": 1353,
+        "route_parts": 16,
+        "arc_multiset_f1": 0.5939086294416244,
+        "ordered_arc_pair_f1": 0.5729442970822282
+      },
+      {
+        "trip": "00000009",
+        "aligned": 1049,
+        "points": 1049,
+        "correct": 800,
+        "missed": 24,
+        "linked": 880,
+        "eligible_links": 1048,
+        "route_parts": 169,
+        "arc_multiset_f1": 0.7358490566037735,
+        "ordered_arc_pair_f1": 0.6403061224489796
+      },
+      {
+        "trip": "00000040",
+        "aligned": 2995,
+        "points": 2995,
+        "correct": 2437,
+        "missed": 1,
+        "linked": 2816,
+        "eligible_links": 2994,
+        "route_parts": 179,
+        "arc_multiset_f1": 0.4838976052848885,
+        "ordered_arc_pair_f1": 0.4597478176527643
+      },
+      {
+        "trip": "00000052",
+        "aligned": 262,
+        "points": 262,
+        "correct": 231,
+        "missed": 0,
+        "linked": 236,
+        "eligible_links": 261,
+        "route_parts": 26,
+        "arc_multiset_f1": 0.8297872340425532,
+        "ordered_arc_pair_f1": 0.7204968944099379
+      },
+      {
+        "trip": "00000056",
+        "aligned": 3932,
+        "points": 3958,
+        "correct": 3100,
+        "missed": 9,
+        "linked": 3322,
+        "eligible_links": 3957,
+        "route_parts": 636,
+        "arc_multiset_f1": 0.7387033398821218,
+        "ordered_arc_pair_f1": 0.701696317749276
+      },
+      {
+        "trip": "00000065",
+        "aligned": 768,
+        "points": 768,
+        "correct": 586,
+        "missed": 2,
+        "linked": 640,
+        "eligible_links": 766,
+        "route_parts": 128,
+        "arc_multiset_f1": 0.535031847133758,
+        "ordered_arc_pair_f1": 0.4678362573099415
+      },
+      {
+        "trip": "00000076",
+        "aligned": 1486,
+        "points": 1486,
+        "correct": 1111,
+        "missed": 13,
+        "linked": 1218,
+        "eligible_links": 1485,
+        "route_parts": 268,
+        "arc_multiset_f1": 0.6035950804162725,
+        "ordered_arc_pair_f1": 0.47715736040609136
+      },
+      {
+        "trip": "00000077",
+        "aligned": 3911,
+        "points": 3911,
+        "correct": 2433,
+        "missed": 17,
+        "linked": 3382,
+        "eligible_links": 3910,
+        "route_parts": 529,
+        "arc_multiset_f1": 0.20521042084168337,
+        "ordered_arc_pair_f1": 0.17913486005089058
+      },
+      {
+        "trip": "00000091",
+        "aligned": 874,
+        "points": 874,
+        "correct": 676,
+        "missed": 0,
+        "linked": 721,
+        "eligible_links": 873,
+        "route_parts": 153,
+        "arc_multiset_f1": 0.5796178343949044,
+        "ordered_arc_pair_f1": 0.5569620253164557
+      }
+    ],
+    "Decision Tree": [
+      {
+        "trip": "00000000",
+        "aligned": 2503,
+        "points": 2503,
+        "correct": 2333,
+        "missed": 5,
+        "linked": 2370,
+        "eligible_links": 2502,
+        "route_parts": 133,
+        "arc_multiset_f1": 0.6222222222222222,
+        "ordered_arc_pair_f1": 0.6995073891625616
+      },
+      {
+        "trip": "00000007",
+        "aligned": 1354,
+        "points": 1354,
+        "correct": 1227,
+        "missed": 0,
+        "linked": 1345,
+        "eligible_links": 1353,
+        "route_parts": 9,
+        "arc_multiset_f1": 0.6419098143236074,
+        "ordered_arc_pair_f1": 0.6430517711171662
+      },
+      {
+        "trip": "00000009",
+        "aligned": 1049,
+        "points": 1049,
+        "correct": 798,
+        "missed": 24,
+        "linked": 871,
+        "eligible_links": 1048,
+        "route_parts": 178,
+        "arc_multiset_f1": 0.7276550998948476,
+        "ordered_arc_pair_f1": 0.6243523316062176
+      },
+      {
+        "trip": "00000040",
+        "aligned": 2995,
+        "points": 2995,
+        "correct": 2617,
+        "missed": 1,
+        "linked": 2855,
+        "eligible_links": 2994,
+        "route_parts": 140,
+        "arc_multiset_f1": 0.5315068493150685,
+        "ordered_arc_pair_f1": 0.5220125786163522
+      },
+      {
+        "trip": "00000052",
+        "aligned": 262,
+        "points": 262,
+        "correct": 247,
+        "missed": 0,
+        "linked": 243,
+        "eligible_links": 261,
+        "route_parts": 19,
+        "arc_multiset_f1": 0.8222222222222222,
+        "ordered_arc_pair_f1": 0.75
+      },
+      {
+        "trip": "00000056",
+        "aligned": 3932,
+        "points": 3958,
+        "correct": 3274,
+        "missed": 9,
+        "linked": 3417,
+        "eligible_links": 3957,
+        "route_parts": 541,
+        "arc_multiset_f1": 0.738255033557047,
+        "ordered_arc_pair_f1": 0.6989335520918786
+      },
+      {
+        "trip": "00000065",
+        "aligned": 768,
+        "points": 768,
+        "correct": 605,
+        "missed": 2,
+        "linked": 650,
+        "eligible_links": 766,
+        "route_parts": 118,
+        "arc_multiset_f1": 0.549889135254989,
+        "ordered_arc_pair_f1": 0.5120481927710844
+      },
+      {
+        "trip": "00000076",
+        "aligned": 1486,
+        "points": 1486,
+        "correct": 1174,
+        "missed": 13,
+        "linked": 1226,
+        "eligible_links": 1485,
+        "route_parts": 260,
+        "arc_multiset_f1": 0.5884615384615385,
+        "ordered_arc_pair_f1": 0.503209242618742
+      },
+      {
+        "trip": "00000077",
+        "aligned": 3911,
+        "points": 3911,
+        "correct": 2497,
+        "missed": 17,
+        "linked": 3434,
+        "eligible_links": 3910,
+        "route_parts": 477,
+        "arc_multiset_f1": 0.21294363256784968,
+        "ordered_arc_pair_f1": 0.18883672404799165
+      },
+      {
+        "trip": "00000091",
+        "aligned": 874,
+        "points": 874,
+        "correct": 704,
+        "missed": 0,
+        "linked": 744,
+        "eligible_links": 873,
+        "route_parts": 130,
+        "arc_multiset_f1": 0.5880398671096345,
+        "ordered_arc_pair_f1": 0.5605095541401274
+      }
+    ],
+    "Extra Trees": [
+      {
+        "trip": "00000000",
+        "aligned": 2503,
+        "points": 2503,
+        "correct": 2304,
+        "missed": 5,
+        "linked": 2345,
+        "eligible_links": 2502,
+        "route_parts": 158,
+        "arc_multiset_f1": 0.5925925925925926,
+        "ordered_arc_pair_f1": 0.6323529411764706
+      },
+      {
+        "trip": "00000007",
+        "aligned": 1354,
+        "points": 1354,
+        "correct": 1245,
+        "missed": 0,
+        "linked": 1343,
+        "eligible_links": 1353,
+        "route_parts": 11,
+        "arc_multiset_f1": 0.6285714285714286,
+        "ordered_arc_pair_f1": 0.6219839142091153
+      },
+      {
+        "trip": "00000009",
+        "aligned": 1049,
+        "points": 1049,
+        "correct": 805,
+        "missed": 24,
+        "linked": 856,
+        "eligible_links": 1048,
+        "route_parts": 193,
+        "arc_multiset_f1": 0.7214137214137214,
+        "ordered_arc_pair_f1": 0.6302083333333334
+      },
+      {
+        "trip": "00000040",
+        "aligned": 2995,
+        "points": 2995,
+        "correct": 2594,
+        "missed": 1,
+        "linked": 2780,
+        "eligible_links": 2994,
+        "route_parts": 215,
+        "arc_multiset_f1": 0.5193661971830986,
+        "ordered_arc_pair_f1": 0.5282608695652173
+      },
+      {
+        "trip": "00000052",
+        "aligned": 262,
+        "points": 262,
+        "correct": 237,
+        "missed": 0,
+        "linked": 233,
+        "eligible_links": 261,
+        "route_parts": 29,
+        "arc_multiset_f1": 0.7872340425531915,
+        "ordered_arc_pair_f1": 0.7088607594936709
+      },
+      {
+        "trip": "00000056",
+        "aligned": 3932,
+        "points": 3958,
+        "correct": 3193,
+        "missed": 9,
+        "linked": 3235,
+        "eligible_links": 3957,
+        "route_parts": 723,
+        "arc_multiset_f1": 0.7287423213708374,
+        "ordered_arc_pair_f1": 0.6905867454622203
+      },
+      {
+        "trip": "00000065",
+        "aligned": 768,
+        "points": 768,
+        "correct": 591,
+        "missed": 2,
+        "linked": 610,
+        "eligible_links": 766,
+        "route_parts": 158,
+        "arc_multiset_f1": 0.5294117647058824,
+        "ordered_arc_pair_f1": 0.48580441640378547
+      },
+      {
+        "trip": "00000076",
+        "aligned": 1486,
+        "points": 1486,
+        "correct": 1149,
+        "missed": 13,
+        "linked": 1172,
+        "eligible_links": 1485,
+        "route_parts": 314,
+        "arc_multiset_f1": 0.5831012070566388,
+        "ordered_arc_pair_f1": 0.4540682414698163
+      },
+      {
+        "trip": "00000077",
+        "aligned": 3911,
+        "points": 3911,
+        "correct": 2460,
+        "missed": 17,
+        "linked": 3268,
+        "eligible_links": 3910,
+        "route_parts": 643,
+        "arc_multiset_f1": 0.20351157222665603,
+        "ordered_arc_pair_f1": 0.17400644468313642
+      },
+      {
+        "trip": "00000091",
+        "aligned": 874,
+        "points": 874,
+        "correct": 683,
+        "missed": 0,
+        "linked": 700,
+        "eligible_links": 873,
+        "route_parts": 174,
+        "arc_multiset_f1": 0.5750798722044729,
+        "ordered_arc_pair_f1": 0.532150776053215
+      }
+    ],
+    "HistGradientBoosting": [
+      {
+        "trip": "00000000",
+        "aligned": 2503,
+        "points": 2503,
+        "correct": 2329,
+        "missed": 5,
+        "linked": 2372,
+        "eligible_links": 2502,
+        "route_parts": 131,
+        "arc_multiset_f1": 0.6219739292364991,
+        "ordered_arc_pair_f1": 0.7012345679012346
+      },
+      {
+        "trip": "00000007",
+        "aligned": 1354,
+        "points": 1354,
+        "correct": 1235,
+        "missed": 0,
+        "linked": 1345,
+        "eligible_links": 1353,
+        "route_parts": 9,
+        "arc_multiset_f1": 0.6302083333333334,
+        "ordered_arc_pair_f1": 0.6310160427807486
+      },
+      {
+        "trip": "00000009",
+        "aligned": 1049,
+        "points": 1049,
+        "correct": 813,
+        "missed": 24,
+        "linked": 888,
+        "eligible_links": 1048,
+        "route_parts": 161,
+        "arc_multiset_f1": 0.7389903329752954,
+        "ordered_arc_pair_f1": 0.6449934980494149
+      },
+      {
+        "trip": "00000040",
+        "aligned": 2995,
+        "points": 2995,
+        "correct": 2634,
+        "missed": 1,
+        "linked": 2860,
+        "eligible_links": 2994,
+        "route_parts": 135,
+        "arc_multiset_f1": 0.5344352617079889,
+        "ordered_arc_pair_f1": 0.5330535152151101
+      },
+      {
+        "trip": "00000052",
+        "aligned": 262,
+        "points": 262,
+        "correct": 248,
+        "missed": 0,
+        "linked": 243,
+        "eligible_links": 261,
+        "route_parts": 19,
+        "arc_multiset_f1": 0.8379888268156425,
+        "ordered_arc_pair_f1": 0.7547169811320755
+      },
+      {
+        "trip": "00000056",
+        "aligned": 3932,
+        "points": 3958,
+        "correct": 3291,
+        "missed": 9,
+        "linked": 3419,
+        "eligible_links": 3957,
+        "route_parts": 539,
+        "arc_multiset_f1": 0.7384407694903814,
+        "ordered_arc_pair_f1": 0.6958316137020223
+      },
+      {
+        "trip": "00000065",
+        "aligned": 768,
+        "points": 768,
+        "correct": 614,
+        "missed": 2,
+        "linked": 658,
+        "eligible_links": 766,
+        "route_parts": 110,
+        "arc_multiset_f1": 0.5668934240362812,
+        "ordered_arc_pair_f1": 0.5212121212121212
+      },
+      {
+        "trip": "00000076",
+        "aligned": 1486,
+        "points": 1486,
+        "correct": 1195,
+        "missed": 13,
+        "linked": 1254,
+        "eligible_links": 1485,
+        "route_parts": 232,
+        "arc_multiset_f1": 0.6128078817733991,
+        "ordered_arc_pair_f1": 0.5294117647058824
+      },
+      {
+        "trip": "00000077",
+        "aligned": 3911,
+        "points": 3911,
+        "correct": 2563,
+        "missed": 17,
+        "linked": 3450,
+        "eligible_links": 3910,
+        "route_parts": 461,
+        "arc_multiset_f1": 0.21280133000831256,
+        "ordered_arc_pair_f1": 0.18724279835390947
+      },
+      {
+        "trip": "00000091",
+        "aligned": 874,
+        "points": 874,
+        "correct": 715,
+        "missed": 0,
+        "linked": 754,
+        "eligible_links": 873,
+        "route_parts": 120,
+        "arc_multiset_f1": 0.597623089983022,
+        "ordered_arc_pair_f1": 0.594017094017094
+      }
+    ],
+    "HistGradientBoosting (tuned)": [
+      {
+        "trip": "00000000",
+        "aligned": 2503,
+        "points": 2503,
+        "correct": 2331,
+        "missed": 5,
+        "linked": 2373,
+        "eligible_links": 2502,
+        "route_parts": 130,
+        "arc_multiset_f1": 0.6196660482374768,
+        "ordered_arc_pair_f1": 0.6911764705882353
+      },
+      {
+        "trip": "00000007",
+        "aligned": 1354,
+        "points": 1354,
+        "correct": 1242,
+        "missed": 0,
+        "linked": 1345,
+        "eligible_links": 1353,
+        "route_parts": 9,
+        "arc_multiset_f1": 0.6253229974160207,
+        "ordered_arc_pair_f1": 0.6259946949602122
+      },
+      {
+        "trip": "00000009",
+        "aligned": 1049,
+        "points": 1049,
+        "correct": 814,
+        "missed": 24,
+        "linked": 890,
+        "eligible_links": 1048,
+        "route_parts": 159,
+        "arc_multiset_f1": 0.7416934619506966,
+        "ordered_arc_pair_f1": 0.6494178525226391
+      },
+      {
+        "trip": "00000040",
+        "aligned": 2995,
+        "points": 2995,
+        "correct": 2633,
+        "missed": 1,
+        "linked": 2861,
+        "eligible_links": 2994,
+        "route_parts": 134,
+        "arc_multiset_f1": 0.5349264705882353,
+        "ordered_arc_pair_f1": 0.5246589716684156
+      },
+      {
+        "trip": "00000052",
+        "aligned": 262,
+        "points": 262,
+        "correct": 248,
+        "missed": 0,
+        "linked": 243,
+        "eligible_links": 261,
+        "route_parts": 19,
+        "arc_multiset_f1": 0.8379888268156425,
+        "ordered_arc_pair_f1": 0.7547169811320755
+      },
+      {
+        "trip": "00000056",
+        "aligned": 3932,
+        "points": 3958,
+        "correct": 3300,
+        "missed": 9,
+        "linked": 3419,
+        "eligible_links": 3957,
+        "route_parts": 539,
+        "arc_multiset_f1": 0.7419682110246871,
+        "ordered_arc_pair_f1": 0.6992139015308233
+      },
+      {
+        "trip": "00000065",
+        "aligned": 768,
+        "points": 768,
+        "correct": 610,
+        "missed": 2,
+        "linked": 659,
+        "eligible_links": 766,
+        "route_parts": 109,
+        "arc_multiset_f1": 0.5585585585585585,
+        "ordered_arc_pair_f1": 0.49700598802395207
+      },
+      {
+        "trip": "00000076",
+        "aligned": 1486,
+        "points": 1486,
+        "correct": 1187,
+        "missed": 13,
+        "linked": 1249,
+        "eligible_links": 1485,
+        "route_parts": 237,
+        "arc_multiset_f1": 0.6110019646365422,
+        "ordered_arc_pair_f1": 0.517948717948718
+      },
+      {
+        "trip": "00000077",
+        "aligned": 3911,
+        "points": 3911,
+        "correct": 2562,
+        "missed": 17,
+        "linked": 3456,
+        "eligible_links": 3910,
+        "route_parts": 455,
+        "arc_multiset_f1": 0.2128898128898129,
+        "ordered_arc_pair_f1": 0.18676244227809133
+      },
+      {
+        "trip": "00000091",
+        "aligned": 874,
+        "points": 874,
+        "correct": 711,
+        "missed": 0,
+        "linked": 746,
+        "eligible_links": 873,
+        "route_parts": 128,
+        "arc_multiset_f1": 0.5935919055649241,
+        "ordered_arc_pair_f1": 0.5818965517241379
+      }
+    ]
+  }
+}

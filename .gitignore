@@ -1,0 +1,14 @@
+.venv/
+.cache/
+.dist/
+__pycache__/
+*.pyc
+/Student folder/
+/evaluator*/
+*.track
+*.nodes
+*.arcs
+*.route
+/*.pdf
+/results/*.log
+/results/*.json.tmp

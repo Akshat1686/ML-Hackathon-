@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PathSnap</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <header><div><h1>PathSnap</h1><p>GPS route reconstruction</p></div><output id="mode">Connect to inference API</output></header>
+    <section class="controls" aria-label="Inference controls">
+      <form id="connect"><label for="api">API address</label><div><input id="api" type="url" required value="http://127.0.0.1:8000"><button>Connect</button></div></form>
+      <form id="predict"><label for="trip">Trip</label><div><select id="trip" required disabled><option value="">Connect to load trips</option></select><button id="run" disabled>Reconstruct route</button></div></form>
+    </section>
+    <p id="status" role="status">Select the address of the laptop running the API.</p>
+    <section class="dashboard" aria-label="Prediction results">
+      <article class="map-panel">
+        <div class="panel-header"><h2>Route map</h2><button class="secondary" id="reset" disabled>Reset view</button></div>
+        <canvas id="map" role="img" aria-label="GPS and reconstructed route. Scroll to zoom and drag to pan."></canvas>
+        <div class="legend"><span class="gps">GPS track</span><span class="route">Predicted route</span></div>
+      </article>
+      <article class="metrics"><h2>Trip metrics</h2><dl id="metrics"></dl></article>
+    </section>
+  </main>
+</body>
+</html>

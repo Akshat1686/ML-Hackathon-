@@ -1,0 +1,32 @@
+:root { font-family: Inter, system-ui, sans-serif; color: #182537; background: #eff4f8; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { width: min(1220px, calc(100% - 48px)); margin: 36px auto; }
+header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cdd9e3; padding-bottom: 20px; margin-bottom: 24px; }
+h1 { margin: 0; font-size: clamp(36px, 6vw, 64px); line-height: 1; letter-spacing: -.055em; }
+header p { margin: 9px 0 0; color: #4b6074; }
+output { font-size: 14px; color: #165552; padding: 8px 12px; border-radius: 6px; background: #dbeeea; }
+.controls, .dashboard { display: grid; gap: 16px; }
+.controls { grid-template-columns: 1fr 1fr; }
+form, article { border: 1px solid #d4dfe8; border-radius: 12px; background: #fff; padding: 16px; }
+form div { display: flex; gap: 8px; margin-top: 8px; }
+label { font-size: 14px; font-weight: 650; }
+input, select, button { font: inherit; border-radius: 6px; min-height: 39px; }
+input, select { flex: 1; min-width: 0; width: 100%; border: 1px solid #afc0ce; background: #fff; color: #182537; padding: 7px; }
+button { padding: 8px 12px; border: 0; background: #116661; color: #fff; cursor: pointer; font-weight: 650; }
+button:focus-visible { outline: 3px solid #3886cc; outline-offset: 2px; }
+button:disabled { opacity: .48; cursor: default; }
+.secondary { background: #e9f1f5; color: #345066; font-size: 13px; }
+#status { min-height: 22px; margin: 12px 0; color: #4b6074; font-size: 14px; }
+.dashboard { grid-template-columns: minmax(0, 1fr) minmax(220px, 285px); align-items: start; }
+.panel-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+h2 { margin: 0; font-size: 19px; }
+canvas { display: block; width: 100%; height: clamp(300px, 51vh, 610px); border: 1px solid #dce6eb; border-radius: 7px; margin: 12px 0; cursor: grab; touch-action: none; }
+canvas:active { cursor: grabbing; }
+.legend { display: flex; gap: 18px; color: #3d5261; font-size: 13px; }
+.legend span::before { content: ""; display: inline-block; width: 16px; height: 3px; margin: 0 6px 3px 0; background: #d37225; }
+.legend .route::before { background: #087e77; }
+dl { margin-bottom: 0; }
+dt { font-size: 13px; color: #4b6074; border-top: 1px solid #e0e8ee; padding-top: 9px; }
+dd { margin: 4px 0 9px; font-weight: 730; font-variant-numeric: tabular-nums; }
+@media (max-width: 730px) { main { width: calc(100% - 24px); margin-top: 20px; } .dashboard, .controls { grid-template-columns: 1fr; } }
